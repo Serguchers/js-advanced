@@ -1,0 +1,44 @@
+.products {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-title {
+    font-family: 'Oswald', sans-serif;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.buy-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  .buy-btn:hover {background-color: #3e8e41}
+  
+  .buy-btn:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+  }
+
+  .btn-cart {
+      margin-left: 95%;
+      background-color: white;
+      border: none;
+      padding: 5px 10px;
+  }
+
+  .fa-solid {
+      font-size: 30px;
+  }
