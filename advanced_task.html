@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Валидация</title>
+</head> 
+<body>
+    <form action='submit'>
+        <p>Имя пользователя: <input type="text" name="username" ></p>
+        <p>Телефон: <input type="text" name="phone" ></p>
+        <p>E-mail: <input type="text" name="email" ></p>
+        <p>Комментарий: <input type="text" name="comment" ></p>
+        <input type="submit" value="Отправить">
+    </form>
+    <script>
+        window.onload = () => {
+            document.querySelector('[type=submit]').addEventListener('click', (e) => {
+                e.preventDefault()
+
+                username_el = document.querySelector('[name=username]')
+                if(username_el.value.match(/^[a-zA-Z]+$/) === null){
+                    username_el.style.borderColor = 'red'
+                } else {
+                    username_el.style.borderColor = 'green'
+                }
+
+                phone_number_el = document.querySelector('[name=phone]')
+                if(phone_number_el.value.match(/^\+7\d{6}-\d{4}$/) === null){
+                    phone_number_el.style.borderColor = 'red'
+                } else {
+                    phone_number_el.style.borderColor = 'green'
+                }
+
+                email_el = document.querySelector('[name=email]')
+                if(email_el.value.match(/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/) === null){
+                    email_el.style.borderColor = 'red'
+                }else {
+                    email_el.style.borderColor = 'green'
+                }
+
+                comment_el = document.querySelector('[name=comment]')
+                if(comment_el.value.match(/^[\wа-яА-я\s\.\,]+$/) === null){
+                    comment_el.style.borderColor = 'red'
+                } else {
+                    comment_el.style.borderColor = 'green'
+                }
+            }
+            )
+        }
+    </script>
+</body>
+</html>
