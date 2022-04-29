@@ -1,9 +1,9 @@
 body{
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 header{
     display: flex;
-    background-color: #2f2a2d;
+    background-color: #8A307F;
     justify-content: space-between;
     color: #fafafa;
     padding: 30px 80px;
@@ -12,7 +12,7 @@ button:focus{
     outline: none;
 }
 .logo{
-
+    font-size: large;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -37,7 +37,7 @@ button:focus{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 40px 80px;
+    padding: 0px 60px;
 }
 /* .products{
     column-gap: 30px;
@@ -53,15 +53,31 @@ p {
 .product-item{
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
     border-radius: 5px;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 20px 10px;
 }
-img {
-    max-width: 100%;
-    height: auto
+.big-image {
+    width: 100%;
+    height: 600px;
 }
+.product-img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cart-item-img{
+    width: 50px;
+    height: 100px;
+}
+.image-wrap {
+    min-width: 100%;
+    min-height: 200px;
+    height: 300px;
+}
+
 .desc {
     border: 1px solid #c0c0c040;
     padding: 15px
@@ -69,6 +85,7 @@ img {
 .cart{
     display: flex;
     position: relative;
+    z-index: 1;
 }
 .cart-block{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
@@ -100,7 +117,7 @@ img {
 
 .buy-btn, .del-btn{
     margin-top: 5px;
-    background-color: #2f2a2d;
+    background-color: #79A7D3;
     padding: 5px 15px;
     border: 1px solid transparent;
     color: #fafafa;
@@ -135,6 +152,7 @@ img {
     margin-left: 30px;
 }
 .product-desc{
+    margin-left: 25px;
     max-width: 150px;
 }
 .product-quantity {
@@ -196,4 +214,7 @@ img {
     color: white;
     font-weight: bold;
 }
-
+#main {
+    width: 80%;
+    margin: auto;
+}
