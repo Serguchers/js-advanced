@@ -82,7 +82,7 @@ Vue.component('cart-item', {
     template: `
     <div class="cart-item">
                     <div class="product-bio">
-                        <div class="cart-item-img">
+                        <div class="cart-img">
                             <img :src="cartItem.img" alt="Some img">
                         </div>
                         <div class="product-desc">
