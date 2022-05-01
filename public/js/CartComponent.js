@@ -6,7 +6,8 @@ Vue.component('cart', {
           cartUrl: '/getBasket.json',
           cartItems: [],
           imgCart: 'https://placehold.it/50x100',
-          showCart: false
+          showCart: false,
+          cartCost: 0
       }
     },
     mounted(){
@@ -14,6 +15,7 @@ Vue.component('cart', {
             .then(data => {
                 for (let item of data.contents){
                     this.$data.cartItems.push(item);
+                    this.countCartCost();
                 }
             });
     },
@@ -25,6 +27,7 @@ Vue.component('cart', {
                     .then(data => {
                         if(data.result === 1){
                             find.quantity++
+                            this.countCartCost();
                         }
                     })
             } else {
@@ -33,6 +36,7 @@ Vue.component('cart', {
                     .then(data => {
                         if(data.result === 1){
                             this.cartItems.push(prod)
+                            this.countCartCost();
                         }
                     })
             }
@@ -56,24 +60,26 @@ Vue.component('cart', {
                 .then(data => {
                     if (data.result === 1){
                         item.quantity--;
-                        console.log('successfully edited');
                     }
                 })
             } else {
                 this.$parent.deleteJson(`/api/cart/${item.id_product}`);
                 this.cartItems.splice(this.cartItems.indexOf(item), 1);
-                console.log('successfully deleted');
             }
-
+            this.countCartCost();
         },
+        countCartCost(){
+            this.cartCost = this.cartItems.reduce((sum, elem) => {return sum+elem.price*elem.quantity}, 0)
+        }
     },
-    template: `<div>
-<button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
-        <div class="cart-block" v-show="showCart">
-            <cart-item v-for="item of cartItems" :key="item.id_product" :cart-item="item" @remove="remove">
-            </cart-item>
-        </div>
-        </div>
+    template: `<div class="cart-wrap">
+                <div class="cart-cost">{{ cartCost }} $</div>
+                <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+                <div class="cart-block" v-show="showCart">
+                    <cart-item v-for="item of cartItems" :key="item.id_product" :cart-item="item" @remove="remove">
+                    </cart-item>
+                </div>
+            </div>
     `
 });
 

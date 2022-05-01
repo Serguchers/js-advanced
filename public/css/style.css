@@ -366,3 +366,11 @@ p {
 .footer__nav {
     flex: 2 0px;
 }}
+.cart-wrap {
+    display: flex;
+}
+.cart-cost {
+    font-weight: bold;
+    margin: auto 20px auto auto;
+    font-size: large;
+}
