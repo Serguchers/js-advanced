@@ -1,0 +1,27 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 1,
+            "id_product": 123,
+            "product_name": "Ноутбук",
+            "price": 45600,
+            "img": "https://pngimg.com/uploads/laptop/laptop_PNG5911.png"
+        },
+        {
+            "quantity": 2,
+            "id_product": 456,
+            "product_name": "Мышка",
+            "price": 1000,
+            "img": "https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/l/2/l20m01.jpg"
+        },
+        {
+            "quantity": 2,
+            "id_product": 125,
+            "product_name": "Ноутбук 1",
+            "price": 45600,
+            "img": "https://pngimg.com/uploads/laptop/laptop_PNG5911.png"
+        }
+    ]
+}
